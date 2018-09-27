@@ -601,6 +601,7 @@
         walls.splice(index,1);
       }
     }
+    map=maze;
     addChests();
     maze[endY][mapSize-1] = "g";
     map=maze;
