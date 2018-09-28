@@ -567,12 +567,14 @@
     if(x<0 || y<0 || y>=map.length || x>=map[0].length || tiles[map[y][x]]["collision"] === "true" || [x, y] in chests){
       return true;
     }
+    return false;
   }
 
   function collisionChest(x, y, flag){
-    if(x<0 || y<0 || y>=map.length-1 || x>=map[0].length-1 || tiles[map[y][x]]["collision"] === "true" || (x === char.x && y === char.y && flag)){
+    if(x<0 || y<0 || y>map.length-1 || x>map[0].length-1 || tiles[map[y][x]]["collision"] === "true" || (x === char.x && y === char.y && flag)){
       return true;
     }
+    return false;
   }
   
   function makeMaze(){
@@ -602,14 +604,14 @@
       }
     }
     map=maze;
-    addChests();
     map[endY][mapSize-1] = "g";
+    addChests();
     // addEnemies();
   }
 
   function addChests(){
-    for (var x = 0; x < mapSize; x++){
-      for (var y = 0; y < mapSize; y++){
+    for (var x = 1; x < mapSize-1; x++){
+      for (var y = 1; y < mapSize-1; y++){
         if(!collisionChest(x, y, true)){
           var adjacentWalls = 0;
           var openSpace = 0;
