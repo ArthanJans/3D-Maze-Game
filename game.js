@@ -603,8 +603,7 @@
     }
     map=maze;
     addChests();
-    maze[endY][mapSize-1] = "g";
-    map=maze;
+    map[endY][mapSize-1] = "g";
     // addEnemies();
   }
 
