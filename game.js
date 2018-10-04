@@ -667,7 +667,7 @@
       textBox("You found a map.");
     } else if(item === 2){
       char.pickaxe += 1;
-      textBox("You found a pickaxe. Press Space in front of a wall to destroy it.");
+      textBox("You found a pickaxe. Press Space in front of a wall to destroy it. You may not destroy the outermost wall.");
     }
   }
 
